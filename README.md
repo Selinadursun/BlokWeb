@@ -58,6 +58,40 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
+
+
+Wat werkt goed
+	•	Content en knoppen/links zijn meestal duidelijk omschreven.
+	•	De website is met het toetsenbord te bedienen en interactieve elementen hebben een zichtbare focus.
+	•	Op mobiel zijn knoppen voldoende groot, is er geen horizontaal scrollen en is er genoeg ruimte tussen interactieve elementen.
+	•	Lijsten worden correct opgebouwd met <ul> en <li>.
+	•	Veel afbeeldingen hebben een alt-tekst of een lege alt value wanneer ze decoratief zijn.
+
+
+Globale Code
+	•	HTML-validatie geeft foutmeldingen (o.a. verkeerde of ontbrekende rel-attributen bij <link>).
+
+Headings 
+	•	Sommige headings zijn niet logisch opgebouwd of niet duidelijk.
+	•	De H1-heading is vaak te algemeen, zoals “Pensioen”. 
+
+Dit beschrijft niet waar de pagina precies over gaat. Een H1 moet het hoofdonderwerp van de pagina helder benoemen. Denk aan bijvoorbeeld “welkom bij ABN AMRO bankieren”, zou een wat meer verhelderende h1 zijn binnen een startpagina. 
+
+Links & Knoppen (screenreader test)
+
+diverse linkteksten geven niet genoeg context wanneer ze door een screenreader worden voorgelezen zoals:
+
+“begin met een plan”, “naar de actie”, “wijzig het”, “prive selected”, “bekijk actie”, “meld je aan webinar”
+
+Zonder de visuele context is niet duidelijk welk plan, welke actie, wat er gewijzigd moet worden of wat ‘selected’ betekent.
+Dit maakt de links voor screenreadergebruikers onduidelijk en niet beschrijvend en duidelijk genoeg.
+
+Afbeeldingen
+	•	Niet alle afbeeldingen die betekenis hebben krijgen een passende alt tekst. Sommige alt attributes zijn leeg terwijl ze dat niet zouden moeten zijn.
+
+Media (video en audio)
+	•	De onderdelen kregen een NO omdat er op de bezochte ABN AMRO-pagina’s geen media aanwezig was. Dus n.t.v. en geen fout.
+
 </details>
 
 
