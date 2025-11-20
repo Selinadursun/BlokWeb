@@ -1,0 +1,41 @@
+/* fontjes urls komen er nog in :) */
+@font-face{
+	font-family:"Poppins";
+	src:url("") format("ttf")
+	}
+	
+	@font-face{font-family:"Montserrat";
+		src:url("")format("ttf")}
+	
+	/* resetje*/
+	*,*::before,*::after{
+		box-sizing:border-box;}
+	
+	body{
+	margin:0;
+	font-family:"Poppins",sans-serif;
+	background:#f5f5f5;color:#1a1a1a;
+	line-height:1.4;
+	}
+	
+	img{
+	display:block;
+	width:100%;
+	height:auto}
+	
+	/* vars */
+	:root{
+	--color-dark:#002f3a;
+	--color-light:#fff;
+	--color-green:#0d7c66;
+	--color-accent:#009b77;
+	--color-grey:#e6e6e6;
+	--spacing:1rem
+	}
+	
+	/* linkjes */
+	a{
+		text-decoration:none;
+		color:inherit
+	}
+	

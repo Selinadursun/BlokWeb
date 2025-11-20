@@ -90,7 +90,7 @@ Afbeeldingen
 	•	Niet alle afbeeldingen die betekenis hebben krijgen een passende alt tekst. Sommige alt attributes zijn leeg terwijl ze dat niet zouden moeten zijn.
 
 Media (video en audio)
-	•	De onderdelen kregen een NO omdat er op de bezochte ABN AMRO-pagina’s geen media aanwezig was. Dus n.t.v. en geen fout.
+	•	De onderdelen kregen een NO omdat er op de bezochte ABN AMRO pagina’s geen media aanwezig was. Dus n.t.v. en geen fout.
 
 </details>
 
@@ -128,12 +128,19 @@ Media (video en audio)
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | student 1     | student 2          | student 3            | student 4        |
+  | Selina        | Naz               | Challisa              | Jonah              |
+  | gebruiken we  | HTML indeling      hebben we de     
+  | grid/flexbox  | op een logische     article elementen      
+  | goed.         | volgorde            op de juiste plek      
+                  |ingedeeld?           gebruikt?              
+          
+  worden de child/parent
+  goed gekoppeld binnen de
+  codes (html/css)
 
+  wat is handiger om 
+  te gebruiken em of rem
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
