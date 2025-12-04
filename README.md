@@ -171,7 +171,9 @@ Media (video en audio)
   | veranderen           | dit als er tijd is | nog een punt | dit wil ik zeker |
   | links met trans-
      itie in combinatie
-     met een icon hoe doe ik dat      | ...                | ...          | ...              |
+     met een icon hoe doe ik dat   
+     link vervangen
+     naar button omdat ze het zelfde doen en ik wil dus een transitie  | ...                | ...          | ...              |
 
 
   ### Verslag van meeting
@@ -214,11 +216,15 @@ Media (video en audio)
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | Selina     | Naz         | Chalissa   | Jonah       |
+  | ---       
+Logo svg kleurt niet wit 
+aside hover animatie 
+button linken aan tweede pagina 
+is first of type beter of first child ?
+Hamburger "menu" als content gezet of in een p?
+Hoe weet ik of ik te veel margin hebt gebruikt en genoeg grid/flex
+
 
 
   ### Verslag van meeting

@@ -1,0 +1,411 @@
+
+
+/* intro afbeelding */
+section:nth-of-type(1) img {
+    max-height: 20em;
+    object-fit: cover;
+}
+
+/* -----------------------------------------
+   SECTIE 1 – Cashback hero + witte kaart
+------------------------------------------*/
+
+section:nth-of-type(1) {
+    position: relative;
+    margin-bottom: 3em;
+}
+
+/* Foto */
+section:nth-of-type(1) img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* WITTE kaart over foto */
+section:nth-of-type(1) article {
+    background: var(--color-light);
+    color: var(--color-text);
+    padding: 1.8em 1.5em;
+    border-radius: 1em;
+
+    margin: -3em 1em 0;   /* overlap + marge */
+    position: relative;
+    z-index: 10;
+
+    display: grid;
+    gap: 1.2em;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
+}
+
+/* Titel */
+section:nth-of-type(1) h1,
+section:nth-of-type(1) h2 {
+    margin: 0;
+    font-size: 1.9em;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Paragrafen */
+section:nth-of-type(1) p {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.45;
+}
+
+/* Lijstje */
+section:nth-of-type(1) ul {
+    margin: 0;
+    padding-left: 1.2em;
+    display: grid;
+    gap: .4em;
+}
+
+
+
+/* EERSTE LINK = GROENE KNOP */
+section:nth-of-type(1) article a:first-of-type {
+    display: inline-block;
+    background: #0f4a4a;
+    color: white;
+    padding: 1em 2.6em 1em 1.4em;
+    border-radius: 1em;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-decoration: underline;
+    position: relative;
+  }
+  
+  section:nth-of-type(1) article a:first-of-type::after {
+    content: "➔";
+    position: absolute;
+    right: 1.2em;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+/* Tweede link = pijl vóór de tekst */
+section:nth-of-type(1) article a:last-of-type {
+    position: relative;
+    padding-left: 1.8em;      /* ruimte voor de pijl links */
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+/* Pijl vóór de tekst */
+section:nth-of-type(1) article a:last-of-type::before {
+    content: "➔";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+/* Hover: pijl schuift naar rechts */
+section:nth-of-type(1) article a:last-of-type:hover::before {
+    transform: translate(.4em, -50%);
+}
+
+/* Hover: pijl schuift naar rechts */
+section:nth-of-type(1) article a:first-of-type:hover::after {
+    transform: translate(.4em, -50%);
+}
+
+
+
+
+
+
+
+
+/* ---------  SECTIE 3: Zo werkt het  --------- */
+
+section:nth-of-type(2) {
+    padding: 1.5em;
+    display: grid;
+    gap: 1.5em;
+}
+
+/* Titel */
+section:nth-of-type(2) h2 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Lijst */
+section:nth-of-type(2) ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2em;
+}
+
+/* Elke stap */
+section:nth-of-type(2) li {
+    display: flex;              
+    align-items: flex-start;
+    gap: 1em;
+    position: relative;
+}
+
+/* Icoontje links */
+section:nth-of-type(2) li > img {
+    width: 2.6em;
+    height: auto;
+    margin-top: 0.25em;
+}
+
+/* Tekst (alle p's) rechts van icoon */
+section:nth-of-type(2) li > p {
+    margin: 0 0 .7em;
+    line-height: 1.45;
+}
+
+/* laatste paragraaf geen extra marge onder */
+section:nth-of-type(3) li > p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Verticale lijn links van de tekst */
+section:nth-of-type(2) li::before {
+    content: "";
+    position: absolute;
+   
+    left: 2.9em;
+    top: 1.6em;
+    bottom: -1em;
+    width: 2px;
+    background: #cfd8dc; /* niet vergeten naar var() te doenn)*/
+}
+
+/* Bij de laatste stap geen doorlopende lijn */
+section:nth-of-type(2) li:last-of-type::before {
+    bottom: 1.2em;   
+}
+
+
+/* ook handig */
+section:nth-of-type(6) {
+    padding: 1em;
+    display: grid;
+    gap: 1em;
+}
+
+section:nth-of-type(6) section {
+    background: var(--color-light);
+    padding: 1em;
+    border-radius: 0.75em;
+    display: grid;
+    gap: 0.5em;
+}
+
+/*feedback*/
+ section:nth-of-type(7) {
+    padding: 1.5em;
+    text-align: center;
+}
+
+section:nth-of-type(7) button {
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*groene footertje*/
+main>section:nth-of-type(8) {
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+  
+    padding: 2em 1.5em;
+    display: grid;
+    gap: 2em;
+  
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  }
+  
+  section:nth-of-type(8) {
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  section:nth-of-type(8) h3 {
+    margin: 0 0 .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  section:nth-of-type(8) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    display: grid;
+    gap: .5em;
+  }
+  
+
+  
+  section:nth-of-type(8) a {
+    color: var(--color-tile-link-footer);
+    text-decoration: none;
+  }
+  section:nth-of-type(8) li a {
+    font-size: 1em;
+    position: relative;
+    display: block;
+    padding: .4em 0;
+    outline: none;
+    transition: opacity .3s;
+    text-decoration: underline; 
+}
+
+  section:nth-of-type(8) li a::before {
+    content: "➔";
+    position: absolute;
+    right: 100%;
+    width: 1.7em;
+    height: 100%;
+    display: block;
+    transition: .3s;
+
+}
+
+
+section:nth-of-type(8) li {
+    padding-left: 1.5em; 
+}
+
+/* Hover */
+section:nth-of-type(8) li a:focus-visible {
+    opacity: .6;
+}
+
+
+section:nth-of-type(8) li a:focus-visible::before {
+    translate: -.5rem;
+}
+
+
+/* ================================
+   MAIN – WIT FOOTER MET 4 KOLOMMEN
+   (DIT IS SECTION 6 IN JE MAIN)
+================================= */
+
+/* Groene footertje*/
+
+
+main>section:nth-of-type(6) {
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+
+    padding: 2em 1.5em;
+    display: grid;
+    gap: 2em;
+
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+}
+
+section:nth-of-type(6) {
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+}
+
+section:nth-of-type(6) h3 {
+    margin: 0 0 .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+section:nth-of-type(6) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .5em;
+}
+
+section:nth-of-type(6) li {
+    margin: 0;
+}
+
+section:nth-of-type(6) a {
+    color: var(--color-tile-link-footer);
+    text-decoration: none;
+}
+
+
+
+/* fixedfeedback*/
+main > a {
+    position: fixed;
+    top: 40%;
+    right: -1.2em;
+    rotate: -90deg;
+    font-size: 1.1em;
+    font-weight: 600;
+    background: #e9f7f7;
+    color: var(--color-dark);
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    z-index: 100;
+
+}
+
+/* Links die pijltjes moeten krijgen */
+
+section:nth-of-type(6) li a {
+    font-size: 1em;
+    position: relative;
+    display: block;
+    padding: .4em 0;
+    outline: none;
+    transition: opacity .3s;
+    text-decoration: underline; 
+}
+
+/* Pijltje */
+
+section:nth-of-type(6) li a::before {
+    content: "➔";
+    position: absolute;
+    right: 100%;
+    width: 1.7em;
+    height: 100%;
+    display: block;
+    transition: .3s;
+
+}
+
+section:nth-of-type(6) li,
+section:nth-of-type(6) li {
+    padding-left: 1.5em; /* schuift link als geheel naar rechts */
+}
+
+/* Hover */
+
+section:nth-of-type(6) li a:hover,
+section:nth-of-type(6) li a:focus-visible {
+    opacity: .6;
+}
+
+section:nth-of-type(6) li a:hover::before,
+
+
+section:nth-of-type(6) li a:focus-visible::before {
+    translate: -.5rem;
+}
+
+ 

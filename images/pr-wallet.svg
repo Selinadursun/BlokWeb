@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="PRODUCT_ICONS" data-name="PRODUCT ICONS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00716b;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #f3c000;
+      }
+
+      .cls-3 {
+        fill: #33b5ab;
+      }
+
+      .cls-4 {
+        fill: #004c4c;
+      }
+
+      .cls-5 {
+        fill: #66c7c0;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="12" y="17" width="48" height="38" rx="4" ry="4"/>
+  <rect class="cls-4" x="16" y="21" width="40" height="9" rx="4" ry="4"/>
+  <path class="cls-2" d="M50.08,27.01l-21.77,21.03c-.8.77-2.07.75-2.84-.05l-12.55-12.99.11-3.98,21.17-20.44c.8-.77,2.07-.75,2.84.05l13.09,13.55c.77.8.75,2.07-.05,2.84Z"/>
+  <path class="cls-5" d="M55.39,35.16l-27.55,11.13c-1.17.47-2.49-.09-2.97-1.27l-6.85-16.95c-.39-.96-.08-2.01.67-2.64.17-.14.37-.25.58-.34l7.63-3.09,19.92-8.05c1.17-.47,2.5.09,2.97,1.27l2.74,6.78,1.38,3.43,2.73,6.74c.47,1.18-.09,2.5-1.27,2.98Z"/>
+  <path class="cls-3" d="M26.91,22l-7.63,3.09c-.22.09-.41.21-.58.34-.2.16-.36.36-.49.57h35.95l-.23-.57-1.38-3.43h0s-25.62,0-25.62,0h0Z"/>
+  <rect class="cls-1" x="12" y="25" width="48" height="26"/>
+  <path class="cls-3" d="M60,34h-11c-3.31,0-6,2.69-6,6s2.69,6,6,6h11v-12Z"/>
+  <circle class="cls-6" cx="49" cy="40" r="3"/>
+</svg>
