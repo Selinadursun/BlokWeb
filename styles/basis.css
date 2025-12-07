@@ -4,14 +4,15 @@
 
 @font-face {
     font-family: "Poppins";
-    src: url("") format("ttf");
+    src: url("..abnamrosans-regular") format("woff2");
 }
+/*regular*/
 
 @font-face {
     font-family: "Montserrat";
-    src: url("") format("ttf");
+    src: url("..abnamrosans-semibold") format("woff2");
 }
-
+/*semibold*/
 
 
 *, *::before, *::after {
@@ -20,28 +21,44 @@
 
 body {
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "sans", sans-serif;
     font-size: 1em;
     background:var(--color-creme);
     color: var(--color-text);
     line-height: 1.4;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
+
 
 /* kleurenpalletje */
 :root {
     --color-dark: #004c4c;
+    --color-dark-white: #004c4c;
+    --color-dark-footer:#004c4c;
     --color-creme:  #f5f5f5;
     --color-light: #fff;
     --color-green: #0d7c66;
     --color-accent: #009b77;
     --color-grey: #e6e6e6;
     --color-yellow:#FFD900;
+    --color-lang-text: var(--color-dark);
+--color-black:#002f3a;
+    --color-tile-link-footer: #fff;
+
+    /* Footer */
+    --color-footer-bg: var(--color-bg);
+    --color-footer-text: var(--color-text);
+    --color-footer-link: var(--color-green);
+    --color-footer-link-arrow: var(--color-green);
+
+    /* Iconen */
+    --color-icon: var(--color-dark);     /* zoek / profiel / hamburger */
+    --color-logo: var(--color-green);    /* ABN logo */
+    --color-social-icons: var(--color-dark);
+
+    /* Tegels "meest gezocht" */
+    --color-tile-link: var(--color-dark);
+   
     
     --color-light-darkmode: #003333;
     --color-grey-darkmode: #224444;
@@ -50,8 +67,8 @@ img {
 
 /*dark light modus*/
 @media (prefers-color-scheme: dark) {
-    :root{ 
-      
+:root{ 
+  --color-dark-white: #ffffff;
         --color-dark: #001b1b;
         --color-light: #003333;
         --color-creme: #000f0f;
@@ -59,10 +76,30 @@ img {
         --color-accent: #00c7a3;
         --color-text: #eafefe;
         --color-grey: #224444;
+        --color-lang-text: #ffffff;
+        --color-mint:#e1f6f2;
+
+  /* Footer  alles wit behalve achtergrond */
+    --color-footer-bg: #001b1b;
+    --color-footer-text: #ffffff;
+    --color-footer-link: #ffffff;
+    --color-footer-link-arrow: #ffffff;
+
+    --color-dark-footer:#ffffff;
+
+    /* Iconen */
+    --color-icons: #ffffff;
+    --color-logo: #ffffff;
+    --color-social-icons: #ffffff;
+
+    /* Tegels links */
+    --color-tile-link: #ffffff;
+
+    --color-tile-link-footer: #fff;
 
     }
-
-}   
+  }
+ 
 
 /*linkjes*/
 a {
@@ -70,59 +107,375 @@ a {
     color: inherit;
 }
 
+/*h1 bron:*/
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
+/* skiplink bron:*/
+.skip-link {
+position: absolute;
+left:999em;
+&:focus{
+  left:0em;
+  position: static;
+}
 
-/*bovenste balk*/
+}
 
-
+/* bovenste balk taal */
 aside {
-    background-color: var(--color-light);
-    color: var(--color-text);
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5em;
-    padding: 0.5em 1em;
+  background: var(--color-light);
+  padding: .6em 1em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
 }
 
-aside a {
-    display: flex;
-    align-items: center;
-    gap: 0.25em;
-    font-size: 0.9em;
+/* nodig voor positionering van dropdown */
+aside details {
+  position: relative;
+  
+}
+
+aside summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  color:  var(--color-lang-text);
+}
+
+aside summary img {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+/* dropdown menu */
+aside ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-creme);
+  padding: 1.5em;
+  border-radius: 1em;
+  box-shadow: 0 8px 30px rgba(0,0,0,.18);
+  list-style: none;
+  margin: 0;
+  display: grid;
+  gap: 1em;
+  min-width: 12em;
+  z-index: 100;
+}
+
+/* tweede dropdown opent naar links */
+aside details:nth-of-type(2) ul {
+  left: auto;
+  right: 0;
+}
+
+aside ul li a {
+  display: block;
+  border-radius: .6em;
+  transition:  .2s;
+}
+
+aside ul li a:hover {
+  background: var(--color-grey);
 }
 
 
+  
+  
 
-/*headertje*/
-
+/* HEADER   */
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0.75em 1em;
+    padding: 1em;
     background: var(--color-light);
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    gap: 1em;
+    gap: 1em; /* afstand tussen zoek-profiel-menu */
 }
 
 header > a img {
-    width: 7em;
+    height: 1.8em;
+}
+
+header > a:first-of-type {
+    margin-right: auto; 
+}
+
+
+
+
+
+/* iconen */
+header > a:nth-of-type(2) img,
+header > a:nth-of-type(3) img {
+    width: 1.4em;
     height: auto;
 }
 
-header nav img {
-    width: 1.75em;
-    height: auto;
+/* hamburger */
+header > button {
+  margin-left: .5em;
+    border: none;
+    padding: .7em;
+    border-radius: 1em;
+    background: none;
+}
+header > button img {
+    width: 1.6em;
+}
+
+/* Voor zoek, profiel én hamburger */
+header a,
+header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6em;
+    border-radius: 1em;     /* zelfde als hamburger */
+    transition: .2s ease;
 }
 
 
 
-/*maina*/
+
+
+
+
+/* Hover kleur */
+header a:hover,
+header button:hover {
+    background: var(--color-grey); 
+}
+
+header svg g path:nth-of-type(1) {
+    fill: var(--color-icons);
+}
+
+
+
+
+
+
+/************/
+/* NAV MENU */
+/************/
+header > nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background:  var(--color-light);
+    translate: -100% 0;
+    transition: translate .3s;
+  
+    padding: 2em;
+  
+    /* vaste hoogte, pagina zichtbaar onderaan */
+    height: 85em;
+    overflow-y: auto;
+  
+    z-index: 9999;
+  }
+  
+  header > nav.toonMenu {
+    translate: 0 0;
+  }
+  
+  /* lijst basis */
+  header > nav ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header > nav ul.open {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  /* SLUITKNOP rechtsboven */
+  header > nav > button {
+    position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  
+
+  background: none;
+  border: none;
+
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--color-dark-white);
+
+  display: flex;
+  align-items: center;
+  gap: .4em;
+
+    
+  }
+  
+  /* kruisje achter tekst "Sluiten" */
+  header > nav > button::after {
+    content: "×";
+    font-size: 1.4em;
+    font-weight: 300;
+  }
+  
+
+  /* SUBMENU'S (alle ul na het hoofdmenu)      */
+  /* terug-knop (in submenu's zijn dit gewone <button> in een li) */
+  header nav ul li button {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--color-dark-white); 
+    display: flex;
+    align-items: center;
+    gap: .4em;
+  }
+  
+  
+  
+  /* submenu-titel (h2) */
+  header nav ul h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: .5em 0 1em;
+    color: var(--color-dark-white);
+  }
+  
+  /* links in submenu's (Familie & relaties, Wonen, etc.) */
+  header nav ul a {
+    display: block;
+    font-size: 1.25em;
+    color: var(--color-dark-white);
+    padding: 1em 1.2em;
+    border-radius: .9em;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  /* pijltje achter elke link */
+  header nav ul a::after {
+    content: "›";
+    position: absolute;
+    right: 1rem;
+    top: .35em;
+    font-size: 1.5em;
+    opacity: .5;
+  }
+  
+  /* hover-tegel in submenu's */
+  header nav ul a:hover {
+    background: var(--color-grey);
+  }
+  
+ 
+  /* HOOFDMENU (alleen eerste ul in nav)       */
+  /* hoofdmenu-knoppen: Producten / Je situatie / App/ Service */
+  header > nav > ul:first-of-type li button {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    width: 100%;
+    padding: 1em 1.2em;
+    text-align: left;
+    border-radius: .9em;
+    color: var(--color-dark-white);
+    font-family: inherit;
+    font-weight: 400;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  /* geen groene terug stijl in hoofdmenu */
+  header > nav > ul:first-of-type li button::before {
+    content: "";
+  }
+  
+  /* pijltje achter Producten / Je situatie  */
+  header > nav > ul:first-of-type li button::after {
+    content: "›";
+    margin-left: auto;
+    font-size: 1.5em;
+    opacity: .5;
+  }
+  
+  /* hover-tegel voor hoofdmenu */
+  header > nav > ul:first-of-type li button:hover {
+    background: var(--color-grey);
+  }
+  
+  /* titel "Menu" boven hoofdmenu */
+  header > nav > ul:first-of-type::before {
+    content: "Menu";
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--color-dark-white);
+    margin: 1em 0 2em;
+  }
+  
+
+  /* DESKTOP (min 90rem)       */
+  @media (min-width: 90rem) {
+  
+    /* hamburger weg */
+    header > button {
+      display: none;
+    }
+  
+    /* nav altijd zichtbaar als normale balk */
+    nav {
+      position: static;
+      translate: 0 0;
+      background: none;
+      padding: 0;
+      overflow: visible;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2em;
+      height: auto;
+    }
+  
+    nav > button {
+      display: none;
+    }
+  
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+    }
+  
+    nav ul li button {
+      font-size: 1em;
+    }
+  }
+  
+
 
 
 main {
@@ -130,9 +483,78 @@ main {
 }
 
 
+/* svg kleur veranderen header en footer*/
+header svg,
+footer svg {
+  fill: var(--color-dark-white);
+}
+
+header svg img{
+  fill:var(--color-dark-white);
+}
+
+
+
 /*basis footertje*/
 
 footer {
     background: var(--color-light);
-    color: var var(--color-dark);
+    color: var(--color-dark);
+}
+
+
+
+/* witte footertje*/
+
+
+footer {
+  background: var(--color-creme);
+  color: var(--color-text);
+  padding: 2em 1em;
+  border-top: 1em solid var(--color-grey);
+  display: grid;
+  gap: 1.5em;
+  text-align: center;
+  font-size: .95em;
+}
+
+/* alle rijtjes */
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+color:var(--color-dark-footer);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em 2em;
+}
+
+/* socialmedia icons */
+footer ul img {
+  width: 2em;
+  height: 2em;
+  object-fit: contain;
+}
+
+footer svg {
+  fill: var(--color-dark-white);
+}
+
+/*footer svg,
+footer svg  {
+    fill: var(--color-social-icons);
+} */
+
+footer ul:nth-of-type(3) {
+  display: grid;
+  gap: .5em;
+  justify-content: center; /* optioneel */
+}
+
+
+
+footer li a:hover,
+footer li a:focus-visible {
+    opacity: .6;
 }

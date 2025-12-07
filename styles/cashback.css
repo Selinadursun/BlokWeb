@@ -1,4 +1,46 @@
 
+main > a:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    color: var(--color-dark-white);
+    text-decoration: none;
+    width: 100%;
+    background: var(--color-creme);
+    position: static; 
+    rotate: 0deg;
+
+    /* NIET meer opacity; blok blijft 100% */
+}
+
+/* PIJL */
+main > a:nth-of-type(1)::before {
+    content: "<";
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    transition: transform .3s, opacity .3s, color .3s;
+}
+
+/* TEKST alleen transparanter maken */
+main > a:nth-of-type(1):hover,
+main > a:nth-of-type(1):focus-visible {
+    color: rgba(0, 76, 76, 0.6); /* Alleen tekst vervaagt */
+
+}
+
+/* PIJL ANIMATIE: subtle scale + schuifje */
+main > a:nth-of-type(1):hover::before,
+main > a:nth-of-type(1):focus-visible::before {
+    transform: translate(-.25rem);
+
+}
+
+
+
+
+  
+  
 
 /* intro afbeelding */
 section:nth-of-type(1) img {
@@ -6,78 +48,779 @@ section:nth-of-type(1) img {
     object-fit: cover;
 }
 
-/* introductie blokje */
+/* -----------------------------------------
+   SECTIE 1 – Cashback + witte kaart
+------------------------------------------*/
+
+section:nth-of-type(1) {
+    position: relative;
+    margin-bottom: 3em;
+}
+
+/* Foto */
+section:nth-of-type(1) img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* WITTE kaart over foto */
+section:nth-of-type(1) article {
+    background: var(--color-light);
+    color: var(--color-text);
+    padding: 1.8em 1.5em;
+    border-radius: 1em;
+
+    margin: -2em 1em 0;   /* overlap + marge */
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    gap: 1.2em;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
+}
+
+/* Titel */
+section:nth-of-type(1) h1,
+section:nth-of-type(1) h2 {
+    margin: 0;
+    font-size: 1.9em;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Paragrafen */
+section:nth-of-type(1) p {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.45;
+}
+
+/* Lijstje */
+section:nth-of-type(1) ul {
+    margin: 0;
+    padding-left: 1.2em;
+    display: grid;
+    gap: .4em;
+}
+
+
+
+
+/* EERSTE LINK = GROENE KNOP */
+section:nth-of-type(1) article a:nth-of-type(1) {
+    display: flex;
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+    padding: 1em 2.6em 1em 1.4em;
+    border-radius: 1em;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-decoration: underline;
+    position: relative;
+}
+
+section:nth-of-type(1) article a:nth-of-type(1)::after {
+    content: "➔";
+    position: absolute;
+    right: 1.2em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform .3s;
+}
+
+/* Hover van groene knop */
+section:nth-of-type(1) article a:nth-of-type(1):hover::after {
+    transform: translate(.4em, -50%);
+}
+
+
+
+/* TWEEDE LINK = PIJL LINKS */
+section:nth-of-type(1) article a:nth-of-type(2) {
+    position: relative;
+    padding-left: 1.8em;
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--color-dark-white);
+}
+
+/* pijl vóór de tekst */
+section:nth-of-type(1) article a:nth-of-type(2)::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6em;
+    font-weight: 1;
+    opacity: 1;
+    transition: transform .3s, opacity .3s;
+}
+
+section:nth-of-type(1) article a:nth-of-type(2):hover,
+section:nth-of-type(1) article a:nth-of-type(2):focus-visible {
+    opacity: .6;                /* <-- tekst */
+}
+
+/* Hover: pijl schuift naar LINKS + wordt lichter */
+section:nth-of-type(1) article a:nth-of-type(2):hover::before,
+section:nth-of-type(1) article a:nth-of-type(2):focus-visible::before {
+    transform: translate(-.4em, -50%);
+    opacity: .6;
+}
+
+
+@media (min-width: 56em) {
+    section:nth-of-type(1) img {
+      height: 26em;
+    }
+  
+    section:nth-of-type(1) article {
+      max-width: 48rem;
+      margin: -3em auto 0;     /* meer overlap, gecentreerd */
+      padding: 2em;
+    }
+  
+    section:nth-of-type(1) h2 {
+      font-size: 2.4em;
+    }
+  }
+  
+
+
+
+
+/* ---------  SECTIE 3: Zo werkt het  --------- */
+
 section:nth-of-type(2) {
-    padding: 1em;
-    display: grid;
-    gap: 1em;
-}
-
-section:nth-of-type(2) h1 {
-    font-size: 1.8em;
-}
-
-section:nth-of-type(2) article {
-    background: var(--color-light);
-    padding: 1em;
-    border-radius: 0.75em;
-    display: grid;
-    gap: 0.75em;
-}
-
-/* Zo werkt het */
-section:nth-of-type(3) {
-    padding: 1em;
-    display: grid;
-    gap: 0.75em;
-}
-
-/* vakantie blokje */
-section:nth-of-type(4) article {
-    background:var(--color-light);
-    padding: 1em;
-    display: grid;
-    gap: 0.75em;
-    border-radius: 0.75em;
-}
-
-/* voorwaarden */
- section:nth-of-type(5) {
-    padding: 1em;
-    display: grid;
-    gap: 0.75em;
-}
-
-details {
-    background: var(--color-light);
-    padding: 1em;
-    border-radius: 0.5em;
-}
-
-/* ook handig */
-section:nth-of-type(6) {
-    padding: 1em;
-    display: grid;
-    gap: 1em;
-}
-
-section:nth-of-type(6) section {
-    background: var(--color-light);
-    padding: 1em;
-    border-radius: 0.75em;
-    display: grid;
-    gap: 0.5em;
-}
-
-/*feedback*/
- section:nth-of-type(7) {
     padding: 1.5em;
-    text-align: center;
+    display: grid;
+    gap: 1.5em;
 }
 
-section:nth-of-type(7) button {
-    font-size: 2em;
-    background: none;
-    border: none;
-    cursor: pointer;
+/* Titel */
+section:nth-of-type(2) h2 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 0;
 }
+
+/* Lijst */
+section:nth-of-type(2) ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2em;
+}
+
+/* Elke stap */
+section:nth-of-type(2) li {
+    display: flex;              
+    align-items: flex-start;
+    gap: 1em;
+    position: relative;
+}
+
+/* Icoontje links */
+section:nth-of-type(2) li > img {
+    width: 2.6em;
+    height: auto;
+    margin-top: 0.25em;
+}
+
+/* Tekst (alle p's) rechts van icoon */
+section:nth-of-type(2) li > p {
+    margin: 0 0 .7em;
+    line-height: 1.45;
+}
+
+
+
+
+
+
+/* ===============================
+   VAKANTIEKAART — section 3
+=============================== */
+
+section:nth-of-type(3) {
+    background: var(--color-light);
+    margin: 1em;
+    padding: 1.5em;
+    border-radius: .75em;
+
+    display: grid;
+    gap: 1.5em;
+}
+
+/* Afbeelding */
+section:nth-of-type(3) > img {
+    width: 100%;
+    height: auto;
+    border-radius: .75em;
+    object-fit: cover;
+}
+
+/* Tekstblok */
+section:nth-of-type(3) > article {
+    display: grid;
+    gap: 1em;
+}
+
+
+section:nth-of-type(3) article > a {
+    margin-top: auto;
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    font-weight: 600;
+    display: flex;
+    text-decoration: underline;
+    position: relative;
+    padding-right: 2.5em;
+}
+
+
+/* GROENE KNOP IN SECTION 3 */
+section:nth-of-type(3) article > a:last-of-type {
+    margin-top: auto;
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    font-weight: 600;
+    display: flex;
+    text-decoration: underline;
+    position: relative;
+    padding-right: 2.5em; /* ruimte voor pijl */
+}
+
+/* Pijltje */
+section:nth-of-type(3) article > a:last-of-type::after {
+    content: "➔";
+    position: absolute;
+    right: .8em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+/* Hover animatie */
+section:nth-of-type(3) article > a:last-of-type:hover::after {
+    transform: translate(.4em, -50%);
+}
+
+
+/* Desktop layout */
+@media (min-width: 44em) {
+    section:nth-of-type(3) {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 2em;
+    }
+
+    section:nth-of-type(3) > img {
+        height: 100%;
+    }
+}
+
+
+
+/* ================================
+   ACCORDEON – EXACT VOLGENS AFBEELDING
+/* -----------------------------------
+   ACCORDEON MET INLINE SVG
+----------------------------------- */
+/* ACCORDEON – GRID LAYOUT */
+section:nth-of-type(4) {
+    display: grid;
+    gap: 1.2em;
+
+    max-width: 70rem;           
+    padding: 2em 1.5em;
+}
+
+section:nth-of-type(4) > h2 {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: .3em;
+}
+
+/* layout tegels */
+section:nth-of-type(4) details {
+    background: var(--color-light);
+    border-radius: 0.6em;
+   
+  }
+  
+  /* standaard summary-balk */
+section:nth-of-type(4) summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.8em;
+    background: var(--color-light);
+    border-radius: 0.6em;
+    transition:  .2s ease;
+}
+
+
+
+section:nth-of-type(4) details summary + h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: .75em;
+    padding: 1em;
+}
+
+
+section:nth-of-type(4) details summary +  p,
+section:nth-of-type(4) details p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin: 2em 2em 1em;
+}
+
+
+
+/* open = grijs */
+section:nth-of-type(4) details[open] summary {
+    background: var(--color-grey);
+    border-radius: 1em 1em 0 0;
+}
+
+/* hover (open én dicht) nog iets donkerder grijs */
+section:nth-of-type(4) details summary:hover {
+    background: var(--color-grey);
+}
+
+  
+  /* SVG pijl */
+  section:nth-of-type(4) summary svg {
+    width: 1.3em;
+    height: 1.3em;
+    transform: rotate(0deg);
+    transition: .3s ease;
+    fill: var(--color-dark-white);
+  }
+  
+  /* draaien bij open bron: https://css-tricks.com/using-styling-the-details-element/ */
+  section:nth-of-type(4) details[open] summary svg {
+    transform: rotate(180deg);
+  }
+  
+ 
+
+
+/* ============================
+   OOK HANDIG – witte tegels
+============================ */
+
+
+/* De hele container */
+section:nth-of-type(5) {
+    padding: 1.5em;
+    display: grid;
+    gap: 1.5em;
+    max-width: 70rem; 
+    margin-left: 1.5em;   /* i.p.v. centreren */
+    margin-right: 0;  
+    margin:auto;
+}
+
+/* Titel "Ook handig" */
+section:nth-of-type(5) > h2 {
+    margin: 0 0 .4em;
+    font-size: 1.35em;
+    font-weight: 400;
+}
+
+/* De witte kaarten */
+section:nth-of-type(5) > section {
+    background: var(--color-light);
+    padding: 1.2em 1.4em;
+    border-radius: 0.75em;
+    display: grid;
+    gap: .6em;
+}
+
+/* Kop van de kaart */
+section:nth-of-type(5) > section h3 {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+
+
+
+
+
+/* =========================================
+   OOK HANDIG – simpele uniforme linkstijl
+   Geldt voor ALLE linklijsten in sectie 4
+========================================= */
+
+section:nth-of-type(5) ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    gap: .7em;
+}
+
+section:nth-of-type(5) li {
+    position: relative;
+}
+
+/* link */
+section:nth-of-type(5) li a {
+    display: block;
+    position: relative;
+    padding-left: 2em;     /* ruimte voor pijl */
+    text-decoration: underline;
+    font-size: 1em;
+    color: var(--color-dark-white);
+    transition: .3s ease;
+}
+
+/* pijl */
+section:nth-of-type(5) li a::before {
+    content: "➔";
+    position: absolute;
+    left: 0;              /* overal dezelfde positie */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s ease;
+}
+
+/* hover: alleen op link */
+section:nth-of-type(5) li a:hover {
+    opacity: .6;
+}
+
+section:nth-of-type(5) li a:hover::before {
+    translate: -.4em;     /* pijl beweegt naar links */
+}
+
+
+/*DESKTOP: kaarten naast elkaar in 2 kolommen*/
+
+
+@media (min-width: 48em) {
+    section:nth-of-type(5) {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start; 
+    }
+
+    section:nth-of-type(5) > h2 {
+        grid-column-start: 1;
+        grid-column-end: 3;   /* twee kolommen → dus 3 */
+    }
+}
+
+
+
+/* ===============================
+   SECTION 5 — FEEDBACK  duim BLOK
+=============================== */
+
+
+section:nth-of-type(6) {
+    max-width: 20rem;
+    margin: 3em auto;
+    padding: 2em 1.5em;
+
+    display: grid;
+    gap: 2em;
+
+    /* 1 kolom voor de titel, 2 voor de knoppen */
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;  /* centreert inhoud */
+}
+
+/* Titel bovenaan, over beide kolommen */
+section:nth-of-type(6) > h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* De knoppen */
+section:nth-of-type(6) > button {
+    background: var(--color-mint);
+    border: none;
+    border-radius: 1em;
+    padding: 1.2em;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,.1);
+    transition: .25s;
+}
+
+/* PNG duimen */
+section:nth-of-type(6) > button img {
+    width: 5em;
+}
+
+section:nth-of-type(6) > button:hover,
+section:nth-of-type(6) > button:focus-visible {
+    transform: scale(1.06);
+    opacity: .8;
+}
+
+
+
+
+
+/*groene footertje*/
+main>section:nth-of-type(7) {
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+  
+    padding: 2em 1.5em;
+    display: grid;
+    gap: 2em;
+  
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  }
+  
+  section:nth-of-type(7) {
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  section:nth-of-type(7) h3 {
+    margin: 0 0 .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  section:nth-of-type(7) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    display: grid;
+    gap: .5em;
+  }
+  
+
+  
+  section:nth-of-type(7) a {
+    color: var(--color-tile-link-footer);
+    text-decoration: none;
+  }
+  section:nth-of-type(7) li a {
+    font-size: 1em;
+    position: relative;
+    display: block;
+    padding: .4em 0;
+    outline: none;
+    transition: opacity .3s;
+    text-decoration: underline; 
+}
+
+  section:nth-of-type(7) li a::before {
+    content: "➔";
+    position: absolute;
+    right: 100%;
+    width: 1.7em;
+    height: 100%;
+    display: block;
+    transition: .3s;
+
+}
+
+
+section:nth-of-type(7) li {
+    padding-left: 1.5em; 
+}
+
+/* Hover */
+section:nth-of-type(7) li a:focus-visible {
+    opacity: .6;
+}
+
+
+section:nth-of-type(7) li a:focus-visible::before {
+    translate: -.5rem;
+}
+
+
+/* ================================
+   MAIN – WIT FOOTER MET 4 KOLOMMEN
+   (DIT IS SECTION 6 IN JE MAIN)
+================================= */
+
+/* Groene footertje*/
+
+
+main>section:nth-of-type(8) {
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+
+    padding: 2em 1.5em;
+    display: grid;
+    gap: 2em;
+
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+}
+
+section:nth-of-type(8) {
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+}
+
+section:nth-of-type(8) h3 {
+    margin: 0 0 .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+section:nth-of-type(8) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .5em;
+}
+
+section:nth-of-type(8) li {
+    margin: 0;
+}
+
+section:nth-of-type(8) a {
+    color: var(--color-tile-link-footer);
+    text-decoration: none;
+}
+
+
+
+/* fixedfeedback*/
+main > a {
+    position: fixed;
+    top: 40%;
+    right: -1.2em;
+    rotate: -90deg;
+    font-size: 1.1em;
+    font-weight: 600;
+    background: var( --color-mint);
+    color: var(--color-dark);
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    z-index: 100;
+
+}
+
+/* Links die pijltjes moeten krijgen */
+
+section:nth-of-type(7) li a {
+    font-size: 1em;
+    position: relative;
+    display: block;
+    padding: .4em 0;
+    outline: none;
+    transition: opacity .3s;
+    text-decoration: underline; 
+}
+
+/* Pijltje */
+
+/* ============================
+   GROENE FOOTER (section 8)
+============================ */
+
+main > section:nth-of-type(8) {
+    background: var(--color-dark);
+    color: var(--color-tile-link-footer);
+
+    padding: 2em 1.5em;
+    display: grid;
+    gap: 2em;
+
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+}
+
+/* interne blokjes */
+section:nth-of-type(8) {
+    margin: 0;
+    padding: 0;
+}
+
+section:nth-of-type(8) h3 {
+    margin: 0 0 .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+section:nth-of-type(8) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .5em;
+}
+
+section:nth-of-type(8) li {
+    padding-left: 1.5em;  /* ruimte voor pijl */
+}
+
+/* LINK */
+section:nth-of-type(8) li a {
+    font-size: 1em;
+    position: relative;
+    display: block;
+    padding: .4em 0;
+
+    color: var(--color-tile-link-footer);
+    text-decoration: underline;
+    outline: none;
+
+    transition: opacity .3s;
+}
+
+/* PIJL */
+section:nth-of-type(7) li a::before {
+    content: "➔";
+    position: absolute;
+    right: 100%;
+    width: 1.7em;
+    height: 100%;
+    display: block;
+    transition: .3s;
+}
+
+/* HOVER */
+section:nth-of-type(7) li a:hover,
+section:nth-of-type(7) li a:focus-visible {
+    opacity: .6;
+}
+
+/* PIJL ANIMATIE */
+section:nth-of-type(7) li a:hover::before,
+section:nth-of-type(7) li a:focus-visible::before {
+    translate: -.5rem;
+}
+
+ 

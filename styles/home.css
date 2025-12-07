@@ -1,39 +1,98 @@
-/*actie blokje sectie 1 */
+/*actie blokje sectie 1 
 
+
+/* SECTION 1 ALGEMEEN */
 section:nth-of-type(1) {
-    background: var(--color-dark);
-    padding-bottom: 1em;
-    border-radius: 0 0 1em 1em;
+    position: relative;
+    margin-bottom: 3em;        
 }
-
-section:nth-of-type(1) h2,
-section:nth-of-type(1) p {
-    color: var(--color-light);
-}
-
-section:nth-of-type(1) h2 {
-    margin: 0.5em 1em 0;
-    font-size: 1.6em;
-    font-weight: 600;
-}
-
-section:nth-of-type(1) p {
-    margin: 0 1em;
-    font-size: 1em;
-}
-
-section:nth-of-type(1) a {
-    background: var(--color-yellow);
-    color:#002f3a;
-    padding: 0.8em 1em;
-    border-radius: 0.5em;
-    font-weight: 600;
+  
+  /* FOTO BOVEN */
+  section:nth-of-type(1) img {
+    width: 100%;
+    height: auto;
     display: block;
-    text-align: center;
-    width: fit-content;
-    margin: 1em auto;
+    object-fit: cover;
+  }
+  
+  /* GROENE KAART */
+  section:nth-of-type(1) article {
+    position: relative;
+    z-index: 1;                
+    background: var(--color-dark);
+    color: var(--color-light);
+    padding: 1.5em;
+    border-radius: 1em;
+  
+    /* kaart schuift 2em OVER de foto */
+     /* top, links & rechts wat witruimte */
+    margin: -2em 1em 0;       
+  }
+  
+  /* titel */
+  section:nth-of-type(1) h2 {
+    color:var(--color-text);
+    margin: 0 0 .75em;
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+  
+  /* tekst */
+  section:nth-of-type(1) p {
+    color:var(--color-text);
+    margin: 0 0 1.25em;
+    font-size: 1.05em;
+  }
+
+
+  /* Gele button in sectie 1 */
+  section:nth-of-type(1) article a {
+    display: inline-block;
+    background: var(--color-yellow);
+    color: var(--color-black);
+    text-decoration: underline;
+    font-weight: 700;
+
+    padding: .9em 1.6em;
+    border-radius: .6em;
+
+    position: relative;
+    padding-right: 2.5em;
+}
+/* bron pijl: https://www.toptal.com/designers/htmlarrows/arrows/ */
+section:nth-of-type(1) article a::after {
+    content: "➔";
+    position: absolute;
+    right: .8em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
 }
 
+section:nth-of-type(1) article a:hover::after {
+    transform: translate(.4em, -50%);
+}
+
+
+  
+  
+  /* DESKTOP: kaart groter en iets meer overlap */
+  @media (min-width: 56em) {
+    section:nth-of-type(1) img {
+      height: 26em;
+    }
+  
+    section:nth-of-type(1) article {
+      max-width: 48rem;
+      margin: -3em auto 0;     /* meer overlap, gecentreerd */
+      padding: 2em;
+    }
+  
+    section:nth-of-type(1) h2 {
+      font-size: 2.4em;
+    }
+  }
+  
 
 /*zoek inputje*/
 
@@ -47,13 +106,21 @@ section:nth-of-type(2) input {
     padding: 0.75em;
     border-radius: 0.5em;
     border: 1px solid var(--color-grey);
+
+}
+
+section form {
+  /* breedte beperken van het input veldje */
+    margin-left: 0;     
+}
+
+section form input {
+    width: 100%;           
 }
 
 
 
 /*tegeltjes sectie 3*/
-
-
 section:nth-of-type(3) ul {
     list-style: none;
     padding: 1em;
@@ -102,7 +169,7 @@ section:nth-of-type(6) ul {
     list-style: none;
     padding: 0;
     margin: 0;
-
+   color: var(--color-tile-link);
     display: flex;
     flex-direction: column;
     gap: 0.4em;
@@ -110,21 +177,62 @@ section:nth-of-type(6) ul {
 
 
 
-/* begin met een plan sectie*/
+/* begin met een plan sectie
 
 
+
+
+/* SECTION 7 ALGEMEEN */
+/* artikel wordt een 2-koloms lay-out */
+/* Kaartje zelf */
+/* BEGIN MET EEN PLAN basis (mobiel: onder elkaar) */
 section:nth-of-type(7) {
     background: var(--color-light);
     margin: 1em;
-    padding: 1em;
+    padding: 1.5em;
+    border-radius: .75em;
+
     display: grid;
-    gap: .75em;
+    gap: 1.5em;
+}
+
+/* afbeelding */
+section:nth-of-type(7) > img {
+    width: 100%;
+    height: auto;
+    border-radius: .75em;
+    object-fit: cover;
+}
+
+/* tekstblok */
+section:nth-of-type(7) > article {
+    display: grid;
+    gap: 1em;
+}
+
+/* DESKTOP – twee kolommen naast elkaar */
+@media (min-width: 44em) {
+    section:nth-of-type(7) {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 2em;
+    }
+
+    section:nth-of-type(7) > img {
+        height: 100%;
+    }
 }
 
 
 
-/*artikelen ook interessant*/
 
+/*artikelen ook interessant*/
+section:nth-of-type(8) h2{
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 1em;
+    margin: 0;
+}
 
 section:nth-of-type(8) ul {
     list-style: none;
@@ -144,6 +252,48 @@ section:nth-of-type(8) li {
     gap: .5em;
 }
 
+section:nth-of-type(8) img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: .75em;
+}
+
+/* Elke tweede link in een artikel = groene knop:) */
+article > a:last-of-type {
+    margin-top:auto;
+    background: var(--color-dark);      
+    color: white;
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    font-weight: 600;
+    display: flex;
+    text-decoration: underline;
+    position: relative;
+    padding-right: 2.5em;
+  }
+  
+
+    /* De 3 kaarten in "Ook interessant" */
+section:nth-of-type(8) li article {
+    display: flex;
+    flex-direction: column;
+   
+}
+  /* Pijltje */
+  article > a:last-of-type::after {
+    content: "➔";
+    position: absolute;
+    right: .8em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+  }
+  
+  article > a:last-of-type:hover::after {
+    transform: translate(.4em, -50%);
+  }
+  
 
 
 /* Groene footertje*/
@@ -151,7 +301,7 @@ section:nth-of-type(8) li {
 
 main>section:nth-of-type(9) {
     background: var(--color-dark);
-    color: var(--color-light);
+    color: var(--color-tile-link-footer);
 
     padding: 2em 1.5em;
     display: grid;
@@ -164,6 +314,7 @@ section:nth-of-type(9) {
     display: block;
     margin: 0;
     padding: 0;
+    
 }
 
 section:nth-of-type(9) h3 {
@@ -176,7 +327,6 @@ section:nth-of-type(9) ul {
     list-style: none;
     padding: 0;
     margin: 0;
-
     display: grid;
     gap: .5em;
 }
@@ -186,42 +336,103 @@ section:nth-of-type(9) li {
 }
 
 section:nth-of-type(9) a {
-    color: var(--color-creme);
+    color: var(--color-tile-link-footer);
     text-decoration: none;
 }
 
 
 
-/* witte footertje*/
-
-
-footer {
-    background:  var(--color-creme); 
+/* fixedfeedback*/
+main > a {
+    position: fixed;
+    top: 40%;
+    right: -1.2em;
+    rotate: -90deg;
+    font-size: 1.1em;
+    font-weight: 600;
+    background: var(--color-mint);
     color: var(--color-dark);
-    padding: 2em 1em;
-    border-top: 1px solid var(--color-grey);
-    display: grid;
-    gap: 1.5em;
-    text-align: center;
-    font-size: .95em;
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    z-index: 100;
+
 }
 
-/* alle rijtjes */
-footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em 2em;
+
+/* Links die pijltjes moeten krijgen */
+section:nth-of-type(4) li a,
+section:nth-of-type(5) li a,
+section:nth-of-type(6) li a,
+section:nth-of-type(9) li a {
+    font-size: 1em;
+    position: relative;
+    display: block;
+    padding: .4em 0;
+    outline: none;
+    transition: opacity .3s;
+    text-decoration: underline; 
 }
 
-/* socialmedia icons */
-footer ul img {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
+/* Pijltje */
+section:nth-of-type(4) li a::before,
+section:nth-of-type(5) li a::before,
+section:nth-of-type(6) li a::before,
+section:nth-of-type(9) li a::before {
+    content: "➔";
+    position: absolute;
+    right: 100%;
+    width: 1.7em;
+    height: 100%;
+    display: block;
+    transition: .3s;
+
 }
+
+section:nth-of-type(4) li,
+section:nth-of-type(5) li,
+section:nth-of-type(6) li,
+section:nth-of-type(9) li {
+    padding-left: 1.5em; 
+    /* schuift link als geheel naar rechts */
+}
+
+/* Hover */
+section:nth-of-type(4) li a:hover,
+section:nth-of-type(5) li a:hover,
+section:nth-of-type(6) li a:hover,
+section:nth-of-type(9) li a:hover,
+section:nth-of-type(4) li a:focus-visible,
+section:nth-of-type(5) li a:focus-visible,
+section:nth-of-type(6) li a:focus-visible,
+section:nth-of-type(9) li a:focus-visible {
+    opacity: .6;
+}
+
+section:nth-of-type(4) li a:hover::before,
+section:nth-of-type(5) li a:hover::before,
+section:nth-of-type(6) li a:hover::before,
+section:nth-of-type(9) li a:hover::before,
+section:nth-of-type(4) li a:focus-visible::before,
+section:nth-of-type(5) li a:focus-visible::before,
+section:nth-of-type(6) li a:focus-visible::before,
+section:nth-of-type(9) li a:focus-visible::before {
+    translate: -.5rem;
+}
+
+/*TEGELS (sectie 3) — WEL HOVER TRANSPARANTIE, GEEN PIJLTJE*/
+
+section:nth-of-type(3) li {
+    transition: opacity .3s;
+}
+
+section:nth-of-type(3) li:hover {
+    opacity: .6;
+}
+
+
+
+
+
 
