@@ -1,113 +1,154 @@
-
-/*fontjes*/
-
-
-@font-face {
-    font-family: "Poppins";
-    src: url("") format("ttf");
-}
+/* =========================================
+   FONTS
+========================================= */
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("") format("ttf");
+  font-family: "Sans";
+  src: url("../abnamrosans-regular.woff2") format("woff2");
+  font-weight: 400;
 }
 
+/* regular */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../abnamrosans-semibold.woff2") format("woff2");
+  font-weight: 600;
+}
+
+/* semibold */
 
 
-*, *::before, *::after {
-    box-sizing: border-box;
+/* =========================================
+ GLOBAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    font-size: 1em;
-    background:var(--color-creme);
-    color: var(--color-text);
-    line-height: 1.4;
+  margin: 0;
+  font-family: "Sans", sans-serif;
+  font-size: 1em;
+  background: var(--color-creme);
+  color: var(--color-black);
+  line-height: 1.4;
 }
 
 
+/* =========================================
+ KLEURENPALET
+========================================= */
 
-/* kleurenpalletje */
+/* LICHTE MODE */
 :root {
-    --color-dark: #004c4c;
-    --color-dark-white: #004c4c;
-    --color-dark-footer:#004c4c;
-    --color-creme:  #f5f5f5;
-    --color-light: #fff;
-    --color-green: #0d7c66;
-    --color-accent: #009b77;
-    --color-grey: #e6e6e6;
-    --color-yellow:#FFD900;
-    --color-lang-text: var(--color-dark);
---color-black:#002f3a;
-    --color-tile-link-footer: #fff;
 
-    /* Footer */
-    --color-footer-bg: var(--color-bg);
-    --color-footer-text: var(--color-text);
-    --color-footer-link: var(--color-green);
-    --color-footer-link-arrow: var(--color-green);
+  /* basis kleuren */
+  --color-dark: #004c4c;
+  --color-dark-white: #004c4c;
+  --color-dark-footer: #004c4c;
+  --color-creme: #f5f5f5;
+  --color-light: #ffffff;
+  --color-grey: #e6e6e6;
+  --color-input: #6e6e6e; 
 
-    /* Iconen */
-    --color-icon: var(--color-dark);     /* zoek / profiel / hamburger */
-    --color-logo: var(--color-green);    /* ABN logo */
-    --color-social-icons: var(--color-dark);
+  /* tekst */
+  --color-black: #002f3a;
+  --color-text: #002f3a;
+  --color-lang-text: #004c4c;
+  --color-white: #ffffff;
 
-    /* Tegels "meest gezocht" */
-    --color-tile-link: var(--color-dark);
-   
-    
-    --color-light-darkmode: #003333;
-    --color-grey-darkmode: #224444;
+  /* accenten / acties */
+  --color-yellow: #ffd900;
+  --color-mint: #e1f6f2;
+
+  /* links / tegels / footers */
+  --color-tile-link: #004c4c;
+  --color-tile-link-footer: #ffffff;
+
+  /* iconen */
+  --color-icons: #004c4c;
+  --color-icon: #004c4c;
+  --color-social-icons: #004c4c;
 }
 
-
-/*dark light modus*/
+/* DONKERE MODE */
 @media (prefers-color-scheme: dark) {
-:root{ 
-  --color-dark-white: #ffffff;
-        --color-dark: #001b1b;
-        --color-light: #003333;
-        --color-creme: #000f0f;
-        --color-green: #0d7c66;
-        --color-accent: #00c7a3;
-        --color-text: #eafefe;
-        --color-grey: #224444;
-        --color-lang-text: #ffffff;
+  :root {
 
-  /* Footer  alles wit behalve achtergrond */
-    --color-footer-bg: #001b1b;
-    --color-footer-text: #ffffff;
-    --color-footer-link: #ffffff;
-    --color-footer-link-arrow: #ffffff;
+    /* basis kleuren */
+    --color-dark: #001b1b;
+    --color-dark-white: #ffffff;
+    --color-dark-footer: #ffffff;
+    --color-creme: #000f0f;
+    --color-light: #003333;
+    --color-input:#224444;
+    --color-grey: #224444;
 
-    --color-dark-footer:#ffffff
+    /* tekst */
+    --color-black: #ffffff;
+    --color-text: #eafefe;
+    --color-lang-text: #ffffff;
 
-    /* Iconen */
-    --color-icons: #ffffff;
-    --color-logo: #ffffff;
-    --color-social-icons: #ffffff;
+    /* accenten / acties */
+    --color-mint: #024e4e;
+    --color-yellow: #ffd900;
 
-    /* Tegels links */
+    /* links / tegels / footers */
     --color-tile-link: #ffffff;
+    --color-tile-link-footer: #ffffff;
 
-    --color-tile-link-footer: #fff;
-
-    }
+    /* iconen */
+    --color-icons: #ffffff;
+    --color-icon: #ffffff;
+    --color-social-icons: #ffffff;
   }
- 
-
-/*linkjes*/
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 
+/* =========================================
+ LINKSTYLES
+========================================= */
 
-/* bovenste balk taal */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================================
+ ACCESSIBILITY
+========================================= */
+
+/* h1 bron: https://www.a11yproject.com/posts/skip-nav-links/ */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* skiplink bron: code tijdens de voortgangs gesprek geschreven samen met Matthijs  */
+.skip-link {
+  position: absolute;
+  left: 999em;
+
+  &:focus {
+    left: 0em;
+    position: static;
+  }
+}
+
+/* =========================================
+ BOVENSTE BALK (TAAL)
+========================================= */
+
 aside {
   background: var(--color-light);
   padding: .6em 1em;
@@ -119,7 +160,6 @@ aside {
 /* nodig voor positionering van dropdown */
 aside details {
   position: relative;
-  
 }
 
 aside summary {
@@ -130,13 +170,24 @@ aside summary {
   cursor: pointer;
   font-size: 1.1em;
   font-weight: 600;
-  color:  var(--color-lang-text);
+  color: var(--color-lang-text);
 }
 
-aside summary img {
-  width: 1.4em;
-  height: 1.4em;
+
+/* standaard staat pijl recht */
+aside summary svg {
+  width: 1.3em;
+  height: 1.3em;
+  transform: rotate(0deg);
+  transition: .3s ease;
+  fill: var(--color-dark-white);
 }
+
+/* dropdown open → pijl draait */
+aside details[open] summary svg {
+  transform: rotate(180deg);
+}
+
 
 /* dropdown menu */
 aside ul {
@@ -146,7 +197,7 @@ aside ul {
   background: var(--color-creme);
   padding: 1.5em;
   border-radius: 1em;
-  box-shadow: 0 8px 30px rgba(0,0,0,.18);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .18);
   list-style: none;
   margin: 0;
   display: grid;
@@ -155,7 +206,7 @@ aside ul {
   z-index: 100;
 }
 
-/* tweede dropdown opent naar links */
+/* tweede dropdown opent naar rechts */
 aside details:nth-of-type(2) ul {
   left: auto;
   right: 0;
@@ -164,7 +215,7 @@ aside details:nth-of-type(2) ul {
 aside ul li a {
   display: block;
   border-radius: .6em;
-  transition:  .2s;
+  transition: .2s;
 }
 
 aside ul li a:hover {
@@ -172,121 +223,124 @@ aside ul li a:hover {
 }
 
 
-  
-  
 
-/* HEADER   */
+/* =========================================
+ HEADER
+========================================= */
 
 header {
-    display: flex;
-    align-items: center;
-    padding: 1em;
-    background: var(--color-light);
-    gap: 1em; /* afstand tussen zoek-profiel-menu */
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  background: var(--color-light);
+  gap: 1em;
 }
 
-header > a img {
-    height: 1.8em;
+header>a img {
+  height: 1.8em;
 }
 
-header > a:first-of-type {
-    margin-right: auto; /* DUWT alles rechts bij elkaar */
+header>a:first-of-type {
+  margin-right: auto;
 }
-
-
 
 /* iconen */
-header > a:nth-of-type(2) img,
-header > a:nth-of-type(3) img {
-    width: 1.4em;
-    height: auto;
+header>a:nth-of-type(2) img,
+header>a:nth-of-type(3) img {
+  width: 1.4em;
+  height: auto;
 }
 
 /* hamburger */
-header > button {
+header>button {
   margin-left: .5em;
-    border: none;
-    padding: .7em;
-    border-radius: 1em;
-    background: none;
-}
-header > button img {
-    width: 1.6em;
+  border: none;
+  padding: .7em;
+  border-radius: 1em;
+  background: none;
 }
 
-/* Voor zoek, profiel én hamburger */
+header>button img {
+  width: 1.6em;
+}
+
+/* icons uniform */
 header a,
 header button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .6em;
-    border-radius:.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6em;
+  border-radius: 1em;
+  transition: .2s ease;
 }
 
-
-
-/* Hover kleur */
 header a:hover,
 header button:hover {
-    background: var(--color-grey); /* zelfde als hamburger */
+  background: var(--color-grey);
 }
 
-header svg,
-header svg * {
-    fill: var(--color-icon);
+header svg {
+  fill: var(--color-dark-white);
+}
+
+header svg g path:nth-of-type(1) {
+  fill: var(--color-icons);
 }
 
 
 
-/************/
-/* NAV MENU */
-/************/
-header > nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    background:  var(--color-light);
-    translate: -100% 0;
-    transition: translate .3s;
-  
-    padding: 2em;
-  
-    /* vaste hoogte, pagina zichtbaar onderaan */
-    height: 85em;
-    overflow-y: auto;
-  
-    z-index: 9999;
-  }
-  
-  header > nav.toonMenu {
-    translate: 0 0;
-  }
-  
-  /* lijst basis */
-  header > nav ul {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  header > nav ul.open {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  
-  /* SLUITKNOP rechtsboven */
-  header > nav > button {
-    position: absolute;
+
+/* =========================================
+ NAV MENU
+========================================= */
+
+header>nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--color-light);
+  translate: -100% 0;
+  transition: translate .3s;
+
+  padding: 2em;
+  height: 85em;
+  overflow-y: auto;
+
+  z-index: 9999;
+}
+
+header>nav.toonMenu {
+  /*bron: https://codepen.io/shooft/pen/Qwjaojy*/
+  translate: 0 0;
+}
+
+/* lijst basis */
+header>nav ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header>nav ul.open {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+/* sluitknop */
+header>nav>button {
+  position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  
 
   background: none;
   border: none;
@@ -298,191 +352,159 @@ header > nav {
   display: flex;
   align-items: center;
   gap: .4em;
+}
 
-    
-  }
-  
-  /* kruisje achter tekst "Sluiten" */
-  header > nav > button::after {
-    content: "×";
-    font-size: 1.4em;
-    font-weight: 300;
-  }
-  
+/* kruisje */
+header>nav>button::after {
+  content: "×"; /* bron: https://unicodeplus.com/U+2039 */
+  font-size: 1.4em;
+  font-weight: 300;
+}
 
-  /* SUBMENU'S (alle ul na het hoofdmenu)      */
-  /* terug-knop (in submenu's zijn dit gewone <button> in een li) */
-  header nav ul li button {
+
+/* submenu terugknop */
+header nav ul li button {
+  background: none;
+  border: none;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--color-dark-white);
+  display: flex;
+  align-items: center;
+  gap: .4em;
+}
+
+/* submenu titel */
+header nav ul h2 {
+  font-size: 2em;
+  font-weight: 700;
+  margin: .5em 0 1em;
+  color: var(--color-dark-white);
+}
+
+/* submenu links */
+header nav ul a {
+  display: block;
+  font-size: 1.25em;
+  color: var(--color-dark-white);
+  padding: 1em 1.2em;
+  border-radius: .9em;
+  text-decoration: none;
+  position: relative;
+}
+
+/* pijltje achter submenu link */
+header nav ul a::after {
+  content: "›"; /* bron: https://unicodeplus.com/U+2039 */
+  position: absolute;
+  right: 1rem;
+  top: .35em;
+  font-size: 1.5em;
+  opacity: .5;
+}
+
+header nav ul a:hover {
+  background: var(--color-grey);
+}
+
+
+/* hoofdmenu knoppen */
+header>nav>ul:first-of-type li button {
+  background: none;
+  border: none;
+  font-size: 1.4em;
+  width: 100%;
+  padding: 1em 1.2em;
+  text-align: left;
+  border-radius: .9em;
+  color: var(--color-dark-white);
+  font-family: inherit;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+/* geen groen terugpijltje */
+header>nav>ul:first-of-type li button::before {
+  content: "";
+}
+
+/* pijltje achter hoofdmenu */
+header>nav>ul:first-of-type li button::after {
+  content: "›"; /* bron: https://unicodeplus.com/U+2039 */
+  margin-left: auto;
+  font-size: 1.5em;
+  opacity: .5;
+}
+
+header>nav>ul:first-of-type li button:hover {
+  background: var(--color-grey);
+}
+
+/* menu titel */
+header>nav>ul:first-of-type::before {
+  content: "Menu";
+  display: block;
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--color-dark-white);
+  margin: 1em 0 2em;
+}
+
+
+/* =========================================
+ DESKTOP
+========================================= */
+
+@media (min-width: 90rem) {
+
+  /* hamburger weg */
+  header>button {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    translate: 0 0;
     background: none;
-    border: none;
-    font-size: 1.3em;
-    font-weight: 600;
-    color: var(--color-dark-white); 
+    padding: 0;
+    overflow: visible;
+
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: .4em;
+    gap: 2em;
+    height: auto;
   }
-  
-  
-  
-  /* submenu-titel (h2) */
-  header nav ul h2 {
-    font-size: 2em;
-    font-weight: 700;
-    margin: .5em 0 1em;
-    color: var(--color-dark-white);
+
+  nav>button {
+    display: none;
   }
-  
-  /* links in submenu's (Familie & relaties, Wonen, etc.) */
-  header nav ul a {
-    display: block;
-    font-size: 1.25em;
-    color: var(--color-dark-white);
-    padding: 1em 1.2em;
-    border-radius: .9em;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  /* pijltje achter elke link */
-  header nav ul a::after {
-    content: "›";
-    position: absolute;
-    right: 1rem;
-    top: .35em;
-    font-size: 1.5em;
-    opacity: .5;
-  }
-  
-  /* hover-tegel in submenu's */
-  header nav ul a:hover {
-    background: var(--color-grey);
-  }
-  
- 
-  /* HOOFDMENU (alleen eerste ul in nav)       */
-  /* hoofdmenu-knoppen: Producten / Je situatie / App/ Service */
-  header > nav > ul:first-of-type li button {
-    background: none;
-    border: none;
-    font-size: 1.4em;
-    width: 100%;
-    padding: 1em 1.2em;
-    text-align: left;
-    border-radius: .9em;
-    color: var(--color-dark-white);
-    font-family: inherit;
-    font-weight: 400;
-  
+
+  nav ul {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    gap: 2em;
   }
-  
-  /* geen groene terug stijl in hoofdmenu */
-  header > nav > ul:first-of-type li button::before {
-    content: "";
-  }
-  
-  /* pijltje achter Producten / Je situatie  */
-  header > nav > ul:first-of-type li button::after {
-    content: "›";
-    margin-left: auto;
-    font-size: 1.5em;
-    opacity: .5;
-  }
-  
-  /* hover-tegel voor hoofdmenu */
-  header > nav > ul:first-of-type li button:hover {
-    background: var(--color-grey);
-  }
-  
-  /* titel "Menu" boven hoofdmenu */
-  header > nav > ul:first-of-type::before {
-    content: "Menu";
-    display: block;
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--color-dark-white);
-    margin: 1em 0 2em;
-  }
-  
 
-  /* DESKTOP (min 90rem)       */
-  @media (min-width: 90rem) {
-  
-    /* hamburger weg */
-    header > button {
-      display: none;
-    }
-  
-    /* nav altijd zichtbaar als normale balk */
-    nav {
-      position: static;
-      translate: 0 0;
-      background: none;
-      padding: 0;
-      overflow: visible;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 2em;
-      height: auto;
-    }
-  
-    nav > button {
-      display: none;
-    }
-  
-    nav ul {
-      display: flex !important;
-      flex-direction: row;
-      gap: 2em;
-    }
-  
-    nav ul li button {
-      font-size: 1em;
-    }
+  nav ul li button {
+    font-size: 1em;
   }
-  
+}
 
 
+/* =========================================
+ MAIN
+========================================= */
 
 main {
-    padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 
-/* svg kleur veranderen header en footer*/
-header svg,
-header svg *,
-footer svg,
-footer svg * {
-  fill: var(--color-dark-white);
-}
-
-header svg,
-header svg *{
-  fill: var(--color-dark-white);
-}
-
-
-header svg img{
-  fill:var(--color-dark-white);
-}
-
-
-
-/*basis footertje*/
-
-footer {
-    background: var(--color-light);
-    color: var(--color-dark);
-}
-
-
-
-/* witte footertje*/
-
+/* =========================================
+ FOOTER
+========================================= */
 
 footer {
   background: var(--color-creme);
@@ -495,36 +517,35 @@ footer {
   font-size: .95em;
 }
 
-/* alle rijtjes */
 footer ul {
   list-style: none;
   margin: 0;
   padding: 0;
-color:var(--color-dark-footer);
+  color: var(--color-dark-footer);
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em 2em;
 }
 
-/* socialmedia icons */
 footer ul img {
   width: 2em;
   height: 2em;
   object-fit: contain;
 }
 
-footer svg {
-  fill: var(--color-dark);
+footer ul:nth-of-type(3) {
+  display: grid;
+  gap: .5em;
+  justify-content: center;
 }
-
-footer svg,
-footer svg * {
-    fill: var(--color-social-icons);
-}
-
 
 footer li a:hover,
 footer li a:focus-visible {
-    opacity: .6;
+  opacity: .6;
+}
+
+footer svg {
+  fill: var(--color-dark-white);
 }
