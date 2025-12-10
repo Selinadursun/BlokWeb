@@ -3,7 +3,7 @@
 ========================================= */
 
 @font-face {
-  font-family: "Sans";
+  font-family: "ABNAMROSans";
   src: url("../abnamrosans-regular.woff2") format("woff2");
   font-weight: 400;
 }
@@ -11,7 +11,7 @@
 /* regular */
 
 @font-face {
-  font-family: "Montserrat";
+  font-family: "ABNAMROSans-semi";
   src: url("../abnamrosans-semibold.woff2") format("woff2");
   font-weight: 600;
 }
@@ -22,16 +22,23 @@
 /* =========================================
  GLOBAL RESET
 ========================================= */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+
 body {
   margin: 0;
-  font-family: "Sans", sans-serif;
+  font-family: "ABNAMROSans", sans-serif;
   font-size: 1em;
   background: var(--color-creme);
   color: var(--color-black);
@@ -53,7 +60,7 @@ body {
   --color-creme: #f5f5f5;
   --color-light: #ffffff;
   --color-grey: #e6e6e6;
-  --color-input: #6e6e6e; 
+  --color-input: #6e6e6e;
 
   /* tekst */
   --color-black: #002f3a;
@@ -85,7 +92,7 @@ body {
     --color-dark-footer: #ffffff;
     --color-creme: #000f0f;
     --color-light: #003333;
-    --color-input:#224444;
+    --color-input: #224444;
     --color-grey: #224444;
 
     /* tekst */
@@ -124,6 +131,7 @@ a {
 ========================================= */
 
 /* h1 bron: https://www.a11yproject.com/posts/skip-nav-links/ */
+/*snap dit niet*/
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -135,15 +143,18 @@ a {
 }
 
 /* skiplink bron: code tijdens de voortgangs gesprek geschreven samen met Matthijs  */
+/*snap dit niet*/
+
 .skip-link {
   position: absolute;
   left: 999em;
-
-  &:focus {
-    left: 0em;
-    position: static;
-  }
 }
+
+.skip-link:focus {
+  left: 0em;
+  position: static;
+}
+
 
 /* =========================================
  BOVENSTE BALK (TAAL)
@@ -183,8 +194,9 @@ aside summary svg {
   fill: var(--color-dark-white);
 }
 
-/* dropdown open → pijl draait */
+/* dropdown open en pijl draait */
 aside details[open] summary svg {
+  /* bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content*/
   transform: rotate(180deg);
 }
 
@@ -300,18 +312,16 @@ header>nav {
   top: 0;
   left: 0;
   right: 0;
-
   display: flex;
   flex-direction: column;
-
   background: var(--color-light);
   translate: -100% 0;
+  /*bron: https://codepen.io/shooft/pen/Qwjaojy*/
   transition: translate .3s;
-
+  /*bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition en  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform*/
   padding: 2em;
   height: 85em;
   overflow-y: auto;
-
   z-index: 9999;
 }
 
@@ -356,7 +366,8 @@ header>nav>button {
 
 /* kruisje */
 header>nav>button::after {
-  content: "×"; /* bron: https://unicodeplus.com/U+2039 */
+  content: "×";
+  /* bron: https://unicodeplus.com/U+2039 */
   font-size: 1.4em;
   font-weight: 300;
 }
@@ -395,7 +406,8 @@ header nav ul a {
 
 /* pijltje achter submenu link */
 header nav ul a::after {
-  content: "›"; /* bron: https://unicodeplus.com/U+2039 */
+  content: "›";
+  /* bron: https://unicodeplus.com/U+2039 */
   position: absolute;
   right: 1rem;
   top: .35em;
@@ -431,7 +443,8 @@ header>nav>ul:first-of-type li button::before {
 
 /* pijltje achter hoofdmenu */
 header>nav>ul:first-of-type li button::after {
-  content: "›"; /* bron: https://unicodeplus.com/U+2039 */
+  content: "›";
+  /* bron: https://unicodeplus.com/U+2039 */
   margin-left: auto;
   font-size: 1.5em;
   opacity: .5;
@@ -522,7 +535,6 @@ footer ul {
   margin: 0;
   padding: 0;
   color: var(--color-dark-footer);
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

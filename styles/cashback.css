@@ -1,5 +1,5 @@
 /* =========================================================
-   0 — TERUGKNOP
+   0 — CREDITCARDKNOP
    ========================================================= */
 
    main > a:nth-of-type(1) {
@@ -8,7 +8,8 @@
     gap: .5em;
     color: var(--color-dark-white);
     text-decoration: none;
-    width: 100%;
+    margin-left: 0;
+    width: auto;
     background: var(--color-creme);
     padding: .5em;
     margin-left: 1em;
@@ -24,7 +25,7 @@ main > a:nth-of-type(1)::before {
 
 main > a:nth-of-type(1):hover,
 main > a:nth-of-type(1):focus-visible {
-    color: rgba(0, 76, 76, .6);
+    color: var(--color-dark);
 }
 
 main > a:nth-of-type(1):hover::before,
@@ -106,7 +107,7 @@ section:nth-of-type(1) article a:nth-of-type(1)::after {
     position: absolute;
     right: 1.2em;
     top: 50%;
-    transform: translateY(-50%); /* bron:https://www.w3schools.com/cssref/func_translatey.php */
+    transform: translateY(-50%); /* bron:https://www.w3schools.com/cssref/func_translatey.php  snap dit niet*/
     transition: .3s ease;
 }
 
@@ -116,7 +117,7 @@ section:nth-of-type(1) article a:nth-of-type(1):hover::after {
 
 
 /* ---------------------------------------------------------
-   1B — TWEEDE LINK = PIJL LINKS (GEUPDATET)
+   1B — TWEEDE LINK = PIJL LINKS 
    --------------------------------------------------------- */
 
 section:nth-of-type(1) article a:nth-of-type(2) {
@@ -278,6 +279,7 @@ section:nth-of-type(4) {
     gap: 1.2em;
     max-width: 70rem;
     padding: 2em 1.5em;
+    margin: auto;
 }
 
 section:nth-of-type(4) > h2 {
@@ -325,7 +327,7 @@ section:nth-of-type(4) summary:hover {
     background: var(--color-grey);
 }
 
-section:nth-of-type(4) details[open] summary {
+section:nth-of-type(4) details[open] summary { /* bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content*/
     background: var(--color-grey);
     border-radius: 1em 1em 0 0;
 }
@@ -485,7 +487,7 @@ section:nth-of-type(6) > button:focus-visible {
 
 
 /* =========================================================
-   7 — SECTIE 7: Eerste groene footer
+   7 — SECTIE 7: Groene footer
    ========================================================= */
 
 main > section:nth-of-type(7) {
@@ -508,12 +510,6 @@ section:nth-of-type(7) h3 {
     font-weight: 600;
 }
 
-/* ------- Nieuwe pijlstijl toegepast ------- */
-
-/* ========================
-   SECTIE 7 — Groene footer 
-   pijlen exact als sectie 9
-======================== */
 
 section:nth-of-type(7) ul {
     list-style: none;
@@ -562,77 +558,3 @@ section:nth-of-type(7) li a:focus-visible::before {
 
 
 
-/* =========================================================
-   8 — SECTIE 8: Tweede groene footer
-   ========================================================= */
- 
-
-main > section:nth-of-type(8) {
-    background: var(--color-dark);
-    color: var(--color-tile-link-footer);
-    padding: 2em 1.5em;
-    display: grid;
-    gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
-}
-
-section:nth-of-type(8) {
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-section:nth-of-type(8) h3 {
-    margin: 0 0 .5em;
-    font-size: 1.2em;
-    font-weight: 600;
-}
-
-/* ========================
-   SECTIE 8 — Groene footer 
-   pijlen exact als sectie 9
-======================== */
-
-section:nth-of-type(8) ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: .5em;
-}
-
-section:nth-of-type(8) li {
-    padding-left: 1.5em;
-}
-
-section:nth-of-type(8) li a {
-    font-size: 1em;
-    position: relative;
-    display: block;
-    padding: .4em 0;
-    outline: none;
-    color: var(--color-tile-link-footer);
-    text-decoration: underline;
-    transition: opacity .3s;
-}
-
-section:nth-of-type(8) li a::before {
-    content: "➔"; /* bron https://www.toptal.com/designers/htmlarrows/symbols/*/
-    position: absolute;
-    right: 100%;
-    width: 1.7em;
-    height: 100%;
-    display: block;
-    transition: .3s;
-}
-
-/* Hover / focus */
-section:nth-of-type(8) li a:hover,
-section:nth-of-type(8) li a:focus-visible {
-    opacity: .6;
-}
-
-section:nth-of-type(8) li a:hover::before,
-section:nth-of-type(8) li a:focus-visible::before {
-    translate: -.5rem;
-}

@@ -9,11 +9,16 @@ function openMenu() {
   var deNav = document.querySelector("header nav");
   deNav.classList.add("toonMenu");
 
-  // root-menu tonen
+  deNav.removeAttribute(
+    "aria-hidden"
+  ); /*bron: https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute*/
+  deNav.removeAttribute(
+    "inert"
+  ); /*bron: https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute*/
+
   showMenu(0);
-  // Bron: YouTube – Web Dev Simplified: Submenu switching
-  // https://www.youtube.com/watch?v=R00QiudbD4Y
 }
+
 /* MENU SLUITEN */
 
 var sluitButton = document.querySelector("header nav > button");
@@ -31,6 +36,15 @@ function sluitMenu() {
   deNav.classList.remove("toonMenu");
   // Bron (classList.remove): MDN
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+  deNav.setAttribute(
+    "aria-hidden",
+    "true"
+  ); /*bron: https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute*/
+  deNav.setAttribute(
+    "inert",
+    ""
+  ); /*bron: https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute*/
 }
 
 /*  sluit menu met Escape */
@@ -46,7 +60,8 @@ window.onkeydown = function (e) {
 /* SUBMENU  */
 
 const nav = document.querySelector("header nav");
-// Bron (querySelector): MDN
+// Bron: YouTube – Web Dev Simplified: Submenu switching
+// https://www.youtube.com/watch?v=R00QiudbD4Y
 
 const menus = nav.querySelectorAll("ul");
 // Bron (querySelectorAll + NodeList): MDN

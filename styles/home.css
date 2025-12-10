@@ -4,7 +4,6 @@
 
  /* ALGEMEEN */
  section:nth-of-type(1) {
-    position: relative;
     margin-bottom: 3em;
 }
 
@@ -102,7 +101,7 @@ section:nth-of-type(2) input {
     width: 100%;
     padding: 0.75em;
     border-radius: 0.5em;
-    border: 1px solid var(--color-grey);
+    border: 0.06em solid var(--color-grey);
 }
 
 /* Formuliercontainer (vervangt label-container) */
@@ -111,11 +110,10 @@ section:nth-of-type(2) form {
     align-items: center;
     gap: .8em;
     background: var(--color-white);
-    border: 1px solid var(--color-grey);
+    border: 0.06em solid var(--color-grey);
     border-radius: .75em;
     padding: .9em 1.2em;
     max-width: 70em;
-    width: 100%;
 }
 
 /* Zoekknop */
@@ -155,7 +153,9 @@ section:nth-of-type(2) form input::placeholder {
 }
 
 section:nth-of-type(2) form input:focus {
-    outline: none;
+    outline: 0.06em solid var(--color-dark);
+    outline-offset: .2em;
+   
 }
 
 
@@ -277,7 +277,7 @@ section:nth-of-type(7) > article {
    FIXED FEEDBACK BUTTON
    ========================================================= */
 
-main > a {
+   #feedback-tab {
     position: fixed;
     top: 40%;
     right: -1.2em;
@@ -290,10 +290,10 @@ main > a {
     border-radius: .5em;
     box-shadow: 0 0 10px rgba(0, 0, 0, .15);
     z-index: 100;
-}
 
+   }
 
-
+ 
 
 /* =========================================================
    SECTION 8 — Ook interessant

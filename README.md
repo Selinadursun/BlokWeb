@@ -40,11 +40,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   ABN AMRO 
-  <img src="Startpagina-ABN-AMRO.jpeg" width="375px" alt="startpagina">
+  <img src="readme-images/Startpagina-ABN-AMRO.jpeg" width="375px" alt="startpagina">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="Plan-gesprek-pagina-ABN-AMRO.jpeg" width="375px" alt="Pagina voor het plannen van een gesprek">
+  <img src="readme-images/Cashback-pagina-ABN-AMRO.jpeg" width="375px" alt="Pagina cashback bij een nieuwe creditcard">
  
 </details>
 
@@ -145,7 +145,7 @@ Media (video en audio)
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  Tijdens de meeting hebben we de html structuur gecontroleerd en verbeterd zodat alle parent/child-relaties kloppen. We hebben afgesproken om Flexbox en Grid op consistente plekken te gebruiken en de CSS te verdelen over basis.css, home.css en detail.css. Daarnaast is besproken om labels bij inputs toe te voegen voor toegankelijkheid en rem/em op de juiste manier te gebruiken. 
+  Tijdens de meeting hebben we de html structuur gecontroleerd en verbeterd zodat alle parent/child kloppen. We hebben afgesproken om Flexbox en Grid op consistente plekken te gebruiken en de CSS te verdelen over drie stylesheets. Daarnaast is besproken om labels bij inputs toe te voegen voor toegankelijkheid en rem/em op de juiste manier te gebruiken. 
 
 </details>
 
@@ -167,8 +167,8 @@ Media (video en audio)
 
   | Selina      | Naz       | Chalissa   | Jonah    |
   | ---            | ---                | ---          | ---              |
-  | svg icon kleur          | en dit             | en ik dit    | en dan ik dat    |
-  | veranderen           | dit als er tijd is | nog een punt | dit wil ik zeker |
+  |           | en dit             | en ik dit    | en dan ik dat    |
+  |            | dit als er tijd is | nog een punt | dit wil ik zeker |
   | links met trans-
      itie in combinatie
      met een icon hoe doe ik dat   
@@ -179,10 +179,8 @@ Media (video en audio)
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+  - De transitie met de pijl is gelukt door content "" te gebruiken 
+  - door dat de buttons en links het zelfde doen namelijk naar een andere pagina leiden ben ik van plan om ze het zelfde te te stylen 
 
 </details>
 
@@ -197,6 +195,19 @@ Media (video en audio)
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+
+Geen HTML-fouten meer. De code is volledig gevalideerd. 
+
+Kleuren en contrasten zijn verbeterd. Dankzij CSS-variabelen is het kleurgebruik consistent en duidelijk leesbaar.
+
+Dark mode is toegevoegd en werkt goed. Kleuren passen zich automatisch aan en blijven voldoende contrast houden.
+
+Duidelijke focus states. Interactieve elementen (zoals de input bar) hebben een zichtbare focus waardoor toetsenbordnavigatie goed werkt.
+
+Headings zijn verbeterd. De H1 heeft nu een duidelijkere betekenis en een aria-label met een visual hidden label voor screenreaders.
+
+De site is goed responsive. Door gebruik van Grid en Flexbox past de layout zich netjes aan op mobiel en desktop.
+
 
 </details>
 
@@ -230,10 +241,10 @@ Hoe weet ik of ik te veel margin hebt gebruikt en genoeg grid/flex
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - de svg is er opnieuw in de code gezet nu werkte het wel 
+  - de rotate hover animatie is er een bron gegeven welke ik kan gebruiken 
+  - first of type en nth of type kunnen in beide gevallen worden gebruikt 
+  - 
 
 </details>
 
@@ -247,19 +258,40 @@ Hoe weet ik of ik te veel margin hebt gebruikt en genoeg grid/flex
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
-
+  <img src="readme-images/readme-images:home-pagina.jpeg" width="375px" alt="uitomst home pagina">
+<img src=" readme-images/cashback-pagina.jpeg" width="375px" alt="uitomst home pagina">
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+ Ik merkte dat de vormgeving goed ging. Door te letten op kleuren, ruimte en uitlijning werd mijn website overzichtelijk. Tijdens het maken heb ik ook veel geleerd over Grid, Flexbox en het positioneren van elementen. Hierdoor werd mijn site automatisch beter responsive omdat onderdelen zich goed aanpassen aan verschillende schermgroottes. Daarnaast heb ik geleerd om beter te letten op toegankelijkheid. 
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+Bijvoorbeeld:
+- dat inputvelden een duidelijke focus moeten hebben als je erop klikt
+- dat links en knoppen een hover-effect moeten hebben
+- dat feedback belangrijk is voor de gebruiker
+
+Mijn aantekeningen en de oefeningen uit de lessen hielpen mij hierbij heel veel. Eigenlijk hebben we bijna alles al in de les behandeld, waardoor ik het goed kon toepassen tijdens het bouwen.
+
+
+  <img src="readme-images/home-pagina-input.jpg" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+Het hamburgermenu was voor mij de grootste uitdaging. Ik heb online bronnen gebruikt om te leren hoe je een hamburger-icoon opbouwt en hoe je een animatie maakt met drie lagen.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+De lesopdracht was één laags en dat lukte mij wel. Maar ik kreeg daar geen voldoening van dus wilde ik graag een drie laags animatie maken. Daardoor kostte het veel meer tijd om alles technisch goed te krijgen.
+
+Wat mij uiteindelijk niet is gelukt, is dat het hamburger-icoon automatisch verandert naar een aside of dropdownmenu op grotere schermen. Ik wilde dat de navigatie bij large screens vanzelf zou overschakelen naar een uitgebreid menu maar dat kreeg ik niet goed werkend binnen de tijd.
+
+  <img src="readme-images/readme-images:hamburger-menu-laag 1.jpeg" width="375px" alt="bummer">
+    <img src="readme-images/readme-images:hamburger-menu-laag 2.jpeg" width="375px" alt="bummer">
+      <img src="readme-images/readme-images:hamburger-menu-laag 3.jpeg" width="375px" alt="bummer">
+
+      orginele ABN AMRO site hamburger menu die veranderd naar dropdown:
+ <img src="readme-images/ABN-AMBRO-dropdown- menu- groot-scherm" width="375px" alt="bummer">
+  
+
+  Daarnaast kreeg ik vlak voor de deadline ook nog een nieuw probleem.. er ontstond ineens een horizontale scroll op mijn site. Die had eerder nooit gezeten. Op desktop en tijdens het schalen van mijn scherm kon ik dit oplossen met overflow-x: hidden, maar op mobiel bleef de horizontale scroll toch terugkomen. Ik heb geprobeerd te kijken of er elementen te breed waren of negatieve waarden de oorzaak waren, maar niets hielp. Hierdoor heb ik dit helaas niet meer kunnen oplossen voor de deadline :/.
+
 </details>
 
 
@@ -275,8 +307,26 @@ Hoe weet ik of ik te veel margin hebt gebruikt en genoeg grid/flex
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
-
+1. https://www.a11yproject.com/posts/visually-hidden/
+2. https://www.a11yproject.com/posts/skip-nav-links/
+3. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+4. https://stackoverflow.com/questions/77386169 styling-svg-summary-details-element-marker
+5. https://codepen.io/shooft/pen/Qwjaojy
+6. https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+7. https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+8. https://www.w3schools.com/cssref/func_translatey.php
+9. https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y
+10. https://unicodeplus.com/
+11. https://www.toptal.com/designers/htmlarrows/symbols/
+12. https://codepen.io/shooft/pen/Qwjaojy
+13. https://www.youtube.com/watch?v=R00QiudbD4Y
+14. https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+15. https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+16. https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+17. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+18. https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
+19. https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+20. https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
+21. https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute
+22. https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute
 </details>
