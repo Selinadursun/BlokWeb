@@ -168,7 +168,6 @@ aside {
   gap: 1.5em;
 }
 
-/* nodig voor positionering van dropdown */
 aside details {
   position: relative;
 }
@@ -185,7 +184,6 @@ aside summary {
 }
 
 
-/* standaard staat pijl recht */
 aside summary svg {
   width: 1.3em;
   height: 1.3em;
@@ -195,8 +193,7 @@ aside summary svg {
 }
 
 /* dropdown open en pijl draait */
-aside details[open] summary svg {
-  /* bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content*/
+aside details[open] summary svg { /* bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content*/
   transform: rotate(180deg);
 }
 
@@ -315,18 +312,15 @@ header>nav {
   display: flex;
   flex-direction: column;
   background: var(--color-light);
-  translate: -100% 0;
-  /*bron: https://codepen.io/shooft/pen/Qwjaojy*/
-  transition: translate .3s;
-  /*bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition en  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform*/
+  translate: -100% 0; /* snap het niet bron: https://codepen.io/shooft/pen/Qwjaojy*/
+  transition: translate .3s; /*bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition en  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform*/
   padding: 2em;
   height: 85em;
   overflow-y: auto;
   z-index: 9999;
 }
 
-header>nav.toonMenu {
-  /*bron: https://codepen.io/shooft/pen/Qwjaojy*/
+header>nav.toonMenu { /*bron: https://codepen.io/shooft/pen/Qwjaojy*/
   translate: 0 0;
 }
 
@@ -366,8 +360,7 @@ header>nav>button {
 
 /* kruisje */
 header>nav>button::after {
-  content: "×";
-  /* bron: https://unicodeplus.com/U+2039 */
+  content: "×";   /* bron: https://unicodeplus.com/U+2039 */
   font-size: 1.4em;
   font-weight: 300;
 }
@@ -406,8 +399,7 @@ header nav ul a {
 
 /* pijltje achter submenu link */
 header nav ul a::after {
-  content: "›";
-  /* bron: https://unicodeplus.com/U+2039 */
+  content: "›"; /* bron: https://unicodeplus.com/U+2039 */
   position: absolute;
   right: 1rem;
   top: .35em;
